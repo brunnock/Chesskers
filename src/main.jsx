@@ -29,9 +29,9 @@ const newGame = () => {
     whiteTurn:     true,
     winner:        null,
     blackPieces:   [],
-    blackMoves:    [], // this is all the moves
+    blackMoves:    [], // all possible moves
     blackCaptures: [],
-    blackMove: [], // this is the selected move
+    blackMove: [], // the selected move
   }
 }
 
