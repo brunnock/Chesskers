@@ -1,0 +1,155 @@
+* {
+    margin:0;
+    padding:0;
+    user-select:none;
+    backface-visibility:  hidden;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color:  transparent;
+}
+
+html,body,main,#game {
+    height:100%;
+    background-color:#000;
+    color:#eff;
+}
+
+p, legend {
+    margin:1em auto;
+    font-size: 4vmin;
+}
+
+#game {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.toggleHelp {
+    padding:.5ex;
+    font-size: 5vmin;
+    position:fixed;
+    top:0;
+    right:0;
+    background-color:#eff;
+    color:black;
+}
+
+
+#winnerDiv {
+    font-size:5vmin;
+    position:fixed;
+    color:red;
+    border:1ex solid #666;
+    border-radius: 1ex;
+    background-color:#fcfcfc;
+    text-align:center;
+
+    /* transform doesn't work with older android browsers */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
+    padding:1em;
+}
+
+#winnerDiv p {
+    font-size:5vmin;
+    margin:0 auto;
+    margin-bottom:1em;
+}
+
+button {
+    font-size: 4vmin;
+    color:#444;
+    padding:1ex;
+    background-color:#8f8;
+    border:.5ex outset;
+    border-color: #aaa #bbb #bbb #aaa;
+}
+
+
+svg {
+    display:block;
+    margin:auto
+}
+
+g.piece line,
+g.piece circle,
+ellipse, path , rect {
+    stroke-width:10;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+g.piece circle,
+g.piece ellipse,
+g.piece path ,
+g.piece rect {
+    stroke:#333333;
+}
+
+rect {
+    rx:8;
+    ry:8;
+}
+ 
+rect.square {
+    stroke:#000;
+    stroke-width:2;
+    rx:0;
+    ry:0;
+}
+
+g.black #cross {
+    stroke:#fff;
+}
+
+g.white #cross {
+    stroke:#000;
+}
+
+fieldset {
+    margin:5% 1%;
+    padding:1%;
+}
+
+@media screen and (orientation: landscape) {
+    fieldset {
+	display:flex;
+    }
+    
+    svg {
+	height:100%;
+    }
+    fieldset svg {
+	width:40%;
+    }
+    p {
+	max-width:30em;
+    }
+    fieldset p {
+	max-width:35%;
+    }
+
+}
+
+@media screen and (orientation: portrait) {
+    fieldset {
+	display:flex;
+	flex-direction:column;
+    }
+    svg {
+	width:100%;
+    }
+    fieldset svg {
+	width:80%;
+    }
+    p {
+	width:80%;
+    }
+}
+
+#instructionsDIV {
+    margin-top:3em;
+}
